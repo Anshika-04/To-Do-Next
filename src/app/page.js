@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { TrashIcon, PencilAltIcon } from '@heroicons/react/solid';
 
 export default function Home() {
-  const initialTasks = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
+  const initialTasks = typeof window !== 'undefined' ? localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [] : [];
   const [task, setTask] = useState(initialTasks);
   const [heading, setHeading] = useState('');
   const [desc, setDesc] = useState('');
